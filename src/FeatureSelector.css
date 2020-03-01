@@ -1,7 +1,6 @@
 .fsel {
-	display: inline;
+	display: inline-block;
 	margin: 0 1em ;
-	border: 1px solid black;
 }
 .fsel label {
 	margin-right: 0.3em;

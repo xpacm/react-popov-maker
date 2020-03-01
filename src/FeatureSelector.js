@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Thumbnail from './Thumbnail';
 import './FeatureSelector.css';
 
 export default class FeatureSelector extends Component {
@@ -12,7 +13,10 @@ export default class FeatureSelector extends Component {
 	}
 
 	renderThumbnail(img){
-		return img;
+		return <Thumbnail 
+				key={img}
+				img={img} 
+				img_dir={this.props.img_dir} />;
 	}
 	render() {
 		return (

@@ -24,7 +24,8 @@ export default class Editor extends Component {
 
 	renderFeatureSelector(feature, index){
 		return <FeatureSelector
-				key={feature.dir} 
+				key={feature.dir}
+				img_dir={feature.dir}
 				name={feature.name} 
 				value={this.state.featureSelectors[index].value} 
 				locked={this.state.featureSelectors[index].locked} 
