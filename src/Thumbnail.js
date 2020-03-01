@@ -3,7 +3,7 @@ import './Thumbnail.css';
 
 export default class Thumbnail extends Component {
 	imgUrl(){
-		return `img/${this.props.img_dir}/${this.props.img}.png`
+		return this.props.img ? `img/${this.props.img_dir}/${this.props.img}.png` : 'img/1x1.png';
 	}
 	render() {
 		return (
