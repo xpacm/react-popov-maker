@@ -3,11 +3,22 @@ import './Thumbnail.css';
 
 export default class Thumbnail extends Component {
 	imgUrl(){
-		return this.props.img ? `img/${this.props.img_dir}/${this.props.img}.png` : 'img/1x1.png';
+		return this.props.img ? `url('img/${this.props.img_dir}/${this.props.img}.png')` : "url('img/1x1.png')";
 	}
+
+	onThumbnailClick(){
+		if (typeof this.props.onClick === "function"){
+			this.props.onClick(this.props.img);
+		}
+	}
+
 	render() {
 		return (
-			<img src={this.imgUrl()} />
+			<div 
+				className="thumbnail" 
+				style={{backgroundImage: this.imgUrl()}} 
+				onClick={() => this.onThumbnailClick()}>
+			</div>
 		);
 	}
 }

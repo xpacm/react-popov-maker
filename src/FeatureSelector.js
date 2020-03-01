@@ -12,11 +12,18 @@ export default class FeatureSelector extends Component {
 		}
 	}
 
+	handleThumbnailClick(img){
+		if (typeof this.props.onChange === "function"){
+			this.props.onChange(img);
+		}
+	}
+
 	renderThumbnail(img){
 		return <Thumbnail 
 				key={img}
 				img={img} 
-				img_dir={this.props.img_dir} />;
+				img_dir={this.props.img_dir}
+				onClick={(img) => this.handleThumbnailClick(img)} />;
 	}
 	render() {
 		return (
