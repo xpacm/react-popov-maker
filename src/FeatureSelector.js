@@ -4,14 +4,6 @@ import './FeatureSelector.css';
 
 export default class FeatureSelector extends Component {
 
-	onSelectChange(e){
-		const newValue = e.target.value;
-
-		if (typeof this.props.onChange === "function"){
-			this.props.onChange(newValue);
-		}
-	}
-
 	handleThumbnailClick(img){
 		if (typeof this.props.onChange === "function"){
 			this.props.onChange(img);
@@ -21,22 +13,19 @@ export default class FeatureSelector extends Component {
 	renderThumbnail(img){
 		return <Thumbnail 
 				key={img}
+				active={img == this.props.value ? ' active' : ''}
 				img={img} 
 				img_dir={this.props.img_dir}
 				onClick={(img) => this.handleThumbnailClick(img)} />;
 	}
 	render() {
 		return (
-			<div className="fsel">
+			<div className="fsel-wrapper">
 				<label>{this.props.name}</label>
-				{/*<select 
-					value={this.props.value} 
-					onChange={(e) => this.onSelectChange(e)}>
-					{this.props.options.map((v) => <option key={v} value={v}>{v}</option>)}
-				</select>
-				*/}
-				{this.props.options.map((v) => this.renderThumbnail(v))}
-				<input type="checkbox" checked={this.props.locked} onChange={this.props.onLockedChange} />
+				<div className="fsel">
+					{this.props.options.map((v) => this.renderThumbnail(v))}
+					<img src={"img/" + (this.props.locked ? "lock" : "unlock") + ".png"} onClick={this.props.onLockedChange} />
+				</div>
 			</div>
 		);
 	}

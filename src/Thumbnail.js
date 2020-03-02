@@ -15,7 +15,7 @@ export default class Thumbnail extends Component {
 	render() {
 		return (
 			<div 
-				className="thumbnail" 
+				className={"thumbnail" + this.props.active}
 				style={{backgroundImage: this.imgUrl()}} 
 				onClick={() => this.onThumbnailClick()}>
 			</div>
