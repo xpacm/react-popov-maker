@@ -1,8 +1,13 @@
-.fsel {
-	display: inline-flex;
-	margin: 0 1em;
-	align-items: center;
+.fsel-wrapper {
+	margin: 1.5em;
 }
-.fsel label {
-	margin-right: 0.3em;
+
+.fsel-wrapper label {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.fsel {
+	display: flex;
+	align-items: center;
 }
