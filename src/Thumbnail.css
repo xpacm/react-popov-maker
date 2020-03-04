@@ -4,9 +4,12 @@
 	height: 50px;
 	border: 1px solid black;
 	margin-right: 0.4em;
+	display: inline-block;
 }
 .active {
 	border-radius: 30%;
-	border-width: 4px;
-	border-color: blue;
+	border-width: 5px;
+	border-color: gray;
+	width: 45px;
+	height: 45px;
 }

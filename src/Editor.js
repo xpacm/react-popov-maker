@@ -72,8 +72,10 @@ export default class Editor extends Component {
 		return (
 			<div className="editor">
 				<Avatar features={this.state.featureSelectors} />
-				{features.map((feature, index) => this.renderFeatureSelector(feature, index))}
-				<div><CustomButton value="Randomize" onClick={ () => this.handleRandomizeClick() } /></div>
+				<div className="features">
+					{features.map((feature, index) => this.renderFeatureSelector(feature, index))}
+					<CustomButton value="Randomize" onClick={ () => this.handleRandomizeClick() } />
+				</div>
 			</div>
 		);
 	}

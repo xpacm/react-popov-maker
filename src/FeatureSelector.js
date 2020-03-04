@@ -21,10 +21,15 @@ export default class FeatureSelector extends Component {
 	render() {
 		return (
 			<div className="fsel-wrapper">
-				<label>{this.props.name}</label>
+				<div className="fsel-top">
+					<label>{this.props.name}</label>
+					<img 
+						src={"img/" + (this.props.locked ? "lock" : "unlock") + ".png"} 
+						onClick={this.props.onLockedChange} 
+					/>
+				</div>
 				<div className="fsel">
 					{this.props.options.map((v) => this.renderThumbnail(v))}
-					<img src={"img/" + (this.props.locked ? "lock" : "unlock") + ".png"} onClick={this.props.onLockedChange} />
 				</div>
 			</div>
 		);
