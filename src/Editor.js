@@ -4,14 +4,15 @@ import FeatureSelector from './FeatureSelector';
 import CustomButton from './CustomButton';
 
 const features = [
-	{'dir': 'Hat', 'name': 'Hat', 'options': ['', 'Flowers', 'Private', 'Summer_Cowboy'], 'locked': false},
-	{'dir': 'Glasses', 'name': 'Glasses', 'options': ['', 'Horacio', 'Popov', 'Ski', 'Steampunk'], 'locked': false},
-	{'dir': 'Hair', 'name': 'Hair', 'options': ['', 'Adam', 'Fuckboy', 'Horacio', 'Jonathan', 'Popov'], 'locked': false},
-	{'dir': 'Facial_Hair', 'name': 'Facial Hair', 'options': ['', 'Mustache', 'Popov', 'Santa'], 'locked': false},
 	{'dir': 'Body', 'name': 'Body', 'options': ['', 'Muscular', 'Popov', 'Princess', 'Swimmer'], 'locked': false},
+	{'dir': 'Facial_Hair', 'name': 'Facial Hair', 'options': ['', 'Mustache', 'Popov', 'Santa'], 'locked': false},
+	{'dir': 'Hair', 'name': 'Hair', 'options': ['', 'Adam', 'Fuckboy', 'Horacio', 'Jonathan', 'Popov'], 'locked': false},
+	{'dir': 'Glasses', 'name': 'Glasses', 'options': ['', 'Horacio', 'Popov', 'Ski', 'Steampunk'], 'locked': false},
+	{'dir': 'Hat', 'name': 'Hat', 'options': ['', 'Flowers', 'Private', 'Summer_Cowboy'], 'locked': false},
 ]
 
 export default class Editor extends Component {
+
 	constructor(props){
 		super(props);
 
@@ -71,7 +72,10 @@ export default class Editor extends Component {
 	render() {
 		return (
 			<div className="editor">
-				<Avatar features={this.state.featureSelectors} />
+				<Avatar 
+					img_dirs={this.state.featureSelectors.map((feature) => feature.dir)} 
+					img_names={this.state.featureSelectors.map((feature) => feature.value)} 
+				/>
 				<div className="features">
 					{features.map((feature, index) => this.renderFeatureSelector(feature, index))}
 					<CustomButton value="Randomize" onClick={ () => this.handleRandomizeClick() } />

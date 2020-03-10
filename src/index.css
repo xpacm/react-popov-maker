@@ -16,6 +16,7 @@ code {
 	width: 512px;
 	height: 512px;
   margin: auto;
+  display: block;
 }
 .features {
   width: 512px;
