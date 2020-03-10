@@ -13,7 +13,7 @@ export default class FeatureSelector extends Component {
 	renderThumbnail(img){
 		return <Thumbnail 
 				key={img}
-				active={img == this.props.value ? ' active' : ''}
+				active={img === this.props.value ? ' active' : ''}
 				img={img} 
 				img_dir={this.props.img_dir}
 				onClick={(img) => this.handleThumbnailClick(img)} />;
@@ -26,6 +26,7 @@ export default class FeatureSelector extends Component {
 					<img 
 						src={"img/" + (this.props.locked ? "lock" : "unlock") + ".png"} 
 						onClick={this.props.onLockedChange} 
+						alt="lock icon"
 					/>
 				</div>
 				<div className="fsel">
