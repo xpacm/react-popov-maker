@@ -6,7 +6,7 @@ export default class Avatar extends Component {
 
 		let img = new Image();
 		img.onload = () => { ctx.drawImage(img, 0, 0) }		
-		img.src = imgSrc;
+		img.src = 'img/' + imgSrc;
 	}
 
 	clearCanvas(){
@@ -16,17 +16,17 @@ export default class Avatar extends Component {
 	}
 
 	componentDidMount() {
-		this.draw('img/base.png');
+		this.draw('base.png');
 	}
 
 	componentDidUpdate(prevProps) {
 		if (JSON.stringify(prevProps.img_names) !== JSON.stringify(this.props.img_names)){
 			this.clearCanvas();
-			this.draw('img/base.png');
+			this.draw('base.png');
 			
 		    this.props.img_names.forEach((imgName, index) => {
 				if (imgName){
-					this.draw(`img/${this.props.img_dirs[index]}/${imgName}.png`);
+					this.draw(`${this.props.img_dirs[index]}/${imgName}.png`);
 				}
 			});
 		}
