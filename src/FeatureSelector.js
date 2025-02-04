@@ -26,7 +26,7 @@ export default class FeatureSelector extends Component {
 					<img 
 						src={"img/" + (this.props.locked ? "lock" : "unlock") + ".png"} 
 						onClick={this.props.onLockedChange} 
-						alt="some image"
+						alt="some bull"
 					/>
 				</div>
 				<div className="fsel">
